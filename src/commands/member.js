@@ -66,7 +66,7 @@ return interaction.reply(
 
 let text =
 
-"📋 สมาชิกทั้งหมด\n\n";
+`📋 สมาชิกทั้งหมด (${today})\n`;
 
 
 

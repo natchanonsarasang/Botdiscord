@@ -12,6 +12,11 @@ Collection
 
 
 
+const startScheduler =
+require("./utils/scheduler");
+
+
+
 const client = new Client({
 
 intents:[
@@ -26,6 +31,8 @@ client.commands = new Collection();
 
 
 
+// commands
+
 const register =
 require("./commands/register");
 
@@ -36,6 +43,12 @@ require("./commands/checkin");
 
 const member =
 require("./commands/member");
+
+
+const testendwork =
+require("./commands/testendwork");
+
+
 
 
 
@@ -55,6 +68,14 @@ client.commands.set(
 "member",
 member
 );
+
+
+client.commands.set(
+"testendwork",
+testendwork
+);
+
+
 
 
 
@@ -89,15 +110,25 @@ interaction
 
 
 
+
 client.once(
 "clientReady",
 ()=>{
+
 
 console.log(
 `Online : ${client.user.tag}`
 );
 
+
+// เริ่มระบบส่งข้อความเวลา 18:00
+
+startScheduler(client);
+
+
 });
+
+
 
 
 

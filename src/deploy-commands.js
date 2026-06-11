@@ -79,7 +79,13 @@ new SlashCommandBuilder()
 
 .toJSON(),
 
+new SlashCommandBuilder()
 
+.setName("testendwork")
+
+.setDescription("ทดสอบข้อความเลิกงาน")
+
+.toJSON(),
 
 
 
