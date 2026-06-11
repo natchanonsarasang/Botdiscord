@@ -1,7 +1,10 @@
 const db = require("./db");
 
 
-db.prepare(`
+db.serialize(()=>{
+
+
+db.run(`
 
 CREATE TABLE IF NOT EXISTS members (
 
@@ -17,11 +20,11 @@ position TEXT
 
 )
 
-`).run();
+`);
 
 
 
-db.prepare(`
+db.run(`
 
 CREATE TABLE IF NOT EXISTS checkins (
 
@@ -33,8 +36,11 @@ date TEXT
 
 )
 
-`).run();
+`);
 
 
 
-console.log("Database ready");
+console.log("Database initialized");
+
+
+});

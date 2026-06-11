@@ -90,7 +90,7 @@ interaction
 
 
 client.once(
-"ready",
+"clientReady",
 ()=>{
 
 console.log(
